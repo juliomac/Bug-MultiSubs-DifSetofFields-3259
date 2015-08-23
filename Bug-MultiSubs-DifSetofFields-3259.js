@@ -23,13 +23,13 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
-/*
-    Cities.insert(
-    {   _id: "BR0310001",
-        City: "Belo Horizonte"
-    });
-*/
 
+    if (Cities.find().count() === 0) {
+      Cities.insert(
+      {   _id: "BR0310001",
+          City: "Belo Horizonte"
+      });
+    }
 
 
     Meteor.publish('BasicData', function() {
