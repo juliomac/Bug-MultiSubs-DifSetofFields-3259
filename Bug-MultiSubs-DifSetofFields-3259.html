@@ -1,0 +1,25 @@
+<head>
+  <title>Bug-MultiSubs-DifSetofFields-3259</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  <p>Basic Data:</p>
+  {{> BasicData}}
+  <br>
+  <hr>
+  <p>More Data</p>
+  {{> MoreData}}
+</body>
+
+<template name="BasicData">
+  {{#each MyData}}
+    {{_id}}
+  {{/each}}
+</template>
+
+<template name="MoreData">
+  {{#each MoreOfMydata}}
+    {{_id}} + {{HotelName}}
+  {{/each}}
+</template>
