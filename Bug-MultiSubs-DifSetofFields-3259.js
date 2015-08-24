@@ -3,22 +3,6 @@ Cities = new Mongo.Collection('cities');
 
 
 if (Meteor.isClient) {
-  var pulseNode = function(node) {
-      if(!node.style) return;
-      var prev = node.style['background-color'] || 'rgba(255,0,0,0)';
-      $(node).css('background-color', 'red');
-      setTimeout(function() {
-        $(node).css('background-color', prev);
-      }, 1000);
-  };
-
-  pulse = function(template) {
-      for(var node = template.firstNode; true; node = node.nextSibling) {
-          pulseNode(node);
-          if(node === template.lastNode) return;
-      }
-  }
-
 
 Template.BasicData.onCreated(function(){
   Meteor.subscribe('BasicData');
